@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Personal Blog - Blog</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="logo.png" alt="My Personal Blog">
+		</div>
+		<nav>
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="blog.php">Blog</a></li>
+				<li><a href="contact.php">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section id="main-content">
+		<div class="post-list">
+			<?php
+				// Connect to the database and retrieve the blog posts
+				$db = new PDO('mysql:host=localhost;dbname=my_personal_blog', 'username', 'password');
+				$query = $db->query("SELECT * FROM posts ORDER BY date DESC");
+				$posts = $query->fetchAll(PDO::FETCH_ASSOC);
+
+				// Loop through the posts and display them
+				foreach ($posts as $post) {
+					echo '<div class="post">';
+					echo '<a href="single-post.php?id=' . $post['id'] . '"><img src="' . $post['image'] . '" alt="' . $post['title'] . '"></a>';
+					echo '<h2><a href="single-post.php?id=' . $post['id'] . '">' . $post['title'] . '</a></h2>';
+					echo '<p>' . $post['excerpt'] . '</p>';
+					echo '<a href="single-post.php?id=' . $post['id'] . '" class="read-more-button">Read More</a>';
+					echo '</div>';
+				}
+			?>
+		</div>
+		<aside>
+			<form class="search-form" action="search.php" method="get">
+				<input type="text" name="query" placeholder="Search...">
+				<button type="submit">Go</button>
+			</form>
+			<ul class="category-list">
+				<li><a href="#">Category 1</a></li>
+				<li><a href="#">Category 2</a></li>
+				<li><a href="#">Category 3</a></li>
+			</ul>
+		</aside>
+	</section>
+	<!-- Rest of the blog page content goes here -->
+</body>
+</html>

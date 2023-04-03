@@ -1,0 +1,67 @@
+/* CSS for desktop devices */
+.header {
+    /* desktop header styles */
+  }
+  
+  .featured-post {
+    /* desktop featured post styles */
+  }
+  
+  .blog-post {
+    /* desktop blog post styles */
+  }
+  
+  .sidebar {
+    /* desktop sidebar styles */
+  }
+  
+  .contact-form {
+    /* desktop contact form styles */
+  }
+  
+  /* CSS for tablet devices */
+  @media only screen and (max-width: 768px) {
+    .header {
+      /* tablet header styles */
+    }
+  
+    .featured-post {
+      /* tablet featured post styles */
+    }
+  
+    .blog-post {
+      /* tablet blog post styles */
+    }
+  
+    .sidebar {
+      /* tablet sidebar styles */
+    }
+  
+    .contact-form {
+      /* tablet contact form styles */
+    }
+  }
+  
+  /* CSS for mobile devices */
+  @media only screen and (max-width: 480px) {
+    .header {
+      /* mobile header styles */
+    }
+  
+    .featured-post {
+      /* mobile featured post styles */
+    }
+  
+    .blog-post {
+      /* mobile blog post styles */
+    }
+  
+    .sidebar {
+      /* mobile sidebar styles */
+    }
+  
+    .contact-form {
+      /* mobile contact form styles */
+    }
+  }
+  
